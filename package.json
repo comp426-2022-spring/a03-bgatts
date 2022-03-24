@@ -20,6 +20,7 @@
   "homepage": "https://github.com/comp426-2022-spring/a03-bgatts#readme",
   "dependencies": {
     "curl": "^0.1.4",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "uuid": "^8.3.2"
   }
 }
