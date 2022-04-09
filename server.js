@@ -17,27 +17,35 @@ app.get('/',(req,res)=>{
 
 })
 
-// Default response for any other request
-app.use(function(req, res){
-    res.status(404).send('404 NOT FOUND')
+
+app.use(function(req, res, next){
+    res.setHeader('Content-Type','text/html')
+    next();
 });
 
+// Default response for any other request
+app.use(function(req, res, next){
+    next()
+    res.status(404).send('404 NOT FOUND')
+    //console.log('here we go agian')
+});
+
+
+
+
 app.get('/app/',(req,res)=>{
-    res.status(200).send('OK')
-    res.setHeader('Content-Type','text/html')
+    res.status(200).send('200 OK')
 })
 
 
 app.get('/app/flip/',(req,res)=>{
-    res.status(200).send('OK')
-    res.setHeader('Content-Type','text/html')
+    res.status(200)
     let flip = flipper()
     res.send(flip)
 })
 
 app.get('/app/flips/:number',(req,res)=>{
-    res.status(200).send('OK')
-    res.setHeader('Content-Type','text/html')
+    res.status(200)
     let num = req.params.number
     let flips = multFlips(num)
     res.send({flips: flips[0], results: flips[1]})
@@ -45,16 +53,14 @@ app.get('/app/flips/:number',(req,res)=>{
 })
 
 app.get('/app/flip/call/heads',(req,res)=>{
-    res.status(200).send('OK')
-    res.setHeader('Content-Type','text/html')
+    res.status(200)
     let guess = guesser_H()
     res.send(guess)
 })
 
 
 app.get('/app/flip/call/tails',(req,res)=>{
-    res.status(200).send('OK')
-    res.setHeader('Content-Type','text/html')
+    res.status(200)
     let guess = guesser_T()
     res.send(guess)
 })

@@ -2,10 +2,10 @@
   "name": "a03-bgatts",
   "version": "1.0.0",
   "description": "Build an API for coin flip",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node server.js --port=5555",
-    "app": "server.js"
+    "server": "server.js"
   },
   "repository": {
     "type": "git",
