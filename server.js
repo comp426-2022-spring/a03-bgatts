@@ -68,6 +68,10 @@ app.get('/app/flip/call/tails',(req,res)=>{
 
 
 
-const port = process.env.port || 5000
-app.listen(port, ()=> console.log(`listneing on port ${port}...`))
+const port = process.env.PORT || 5000
+//app.listen(port, ()=> console.log(`listneing on port ${server}...`))
+
+const server = app.listen(port, () => {
+    console.log('App listening on port %PORT%'.replace('%PORT%',port))
+});
 
