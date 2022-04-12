@@ -8,9 +8,9 @@ import express from "express"
 import minimist from "minimist"
 
 const app = express()
+const args = minimist(process.argv.slice(2))
+args["port"]
 
-let argv = process.argv.slice(2);
-let portSel = argv[2]
 
 
 
@@ -71,13 +71,10 @@ app.get('/app/flip/call/tails',(req,res)=>{
     res.send(guess)
 })
 
-console.log(argv)
-console.log(portSel)
 
-
-const port =  portSel || 5000;
+const port = args.port || 5000;
 //app.listen(port, ()=> console.log(`listneing on port ${server}...`))
 
 const server = app.listen(port, () => {
-    console.log('App listening on port %PORT%'.replace('%PORT%',port))
+    console.log(`App listening on port ${port}`)
 });
