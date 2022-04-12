@@ -71,7 +71,9 @@ app.get('/app/flip/call/tails',(req,res)=>{
     res.send(guess)
 })
 
+console.log(argv)
 console.log(portSel)
+
 
 const port =  portSel || 5000;
 //app.listen(port, ()=> console.log(`listneing on port ${server}...`))
