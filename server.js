@@ -4,10 +4,16 @@ import { guesser_H } from './modules/guess-flip-H.js';
 import { guesser_T } from './modules/guess-flip-T.js';
 
 
-
 import express from "express"
+import minimist from "minimist"
 
 const app = express()
+
+let argv = process.argv.slice(2);
+let portSel = argv[0]
+
+
+
 
 //app.use((req, res, next) => {
 //    res.status(404)
@@ -67,11 +73,10 @@ app.get('/app/flip/call/tails',(req,res)=>{
 
 
 
-
-const port = process.env.PORT || 5000
+console.log(argv)
+const port =  portSel || 5000;
 //app.listen(port, ()=> console.log(`listneing on port ${server}...`))
 
 const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port))
 });
-
