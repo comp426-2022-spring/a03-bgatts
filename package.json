@@ -1,0 +1,27 @@
+{
+  "name": "a03-bgatts",
+  "version": "1.0.0",
+  "description": "Build an API for coin flip",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555",
+    "server": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a03-bgatts.git"
+  },
+  "author": "Bronson Gatts",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-bgatts/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-bgatts#readme",
+  "dependencies": {
+    "curl": "^0.1.4",
+    "express": "^4.17.3",
+    "minimist": "^1.2.6",
+    "uuid": "^8.3.2"
+  }
+}
